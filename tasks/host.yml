@@ -1,0 +1,77 @@
+---
+# list details of satellite host and the available hosts
+- name: get details of host
+  uri:
+   url: "https://containers.cloud.ibm.com/global/v2/satellite/hostqueue/getHosts?controller=DK-OPA"
+   method: GET
+   headers:
+    Authorization: "Bearer {{ iamtoken }}"
+    IAM-Apikey: "{{ apikey }}"
+    Content-Type: "application/json"
+  register: hostinfo
+#- name: create a file with the details of hosts in pool
+#  file:
+#   dest: ~/ics/tasks/hostfile.txt
+#   state: touch
+#  delegate_to: localhost
+#- name: append
+#  lineinfile:
+#   dest: ~/ics/tasks/hostfile.txt
+#   line: "{{ hostinfo }}"
+#   insertafter: EOF
+#  delegate_to: localhost
+#- name: copy file to json
+#  copy:
+#   src: ~/ics/tasks/hostfile.txt
+#   dest: ~/ics/tasks/hostfile.json
+#- name: find VM's in "unassigned" state
+#  debug:
+#   msg: "{{ hostfile.txt | json_query(jmesquery) }}"
+#  vars:
+#   jmesquery: "[? state=='unassigned'].{Name: name, State: state}"
+#- name: find VM's in "assigned" state
+#  set_fact:
+#   my_vm: "{{ name | json_query(query) }}"
+#  vars:
+#   query: "json.resources[?state.contains(@, 'assigned')].name"
+- name: set fact for file
+  set_fact:
+   version_file: "{{ lookup('file','~/ics/tasks/hostfile_rawdata.json') | from_json }}"
+- name: print all VM names and their states
+  lineinfile:
+   line: "{{ item.name }}:{{ item.state }}"
+   path: ./satellitehosts_state.txt
+   insertafter: EOF
+  with_items:
+   - "{{ version_file.json }}"
+- name: Filter list of only unassigned servers
+  set_fact:
+   vmlist1: "{{vmlist1 | default([]) + [item]}}"
+  with_lines: cat "./satellitehosts_state.txt"
+  when: item.find("unassigned") != -1 and item.find("ics_small") != -1
+- name: count elements
+  set_fact:
+   Number_of_small: "{{ vmlist1|length }}"
+- name: Filter list of only unassigned servers
+  set_fact:
+   vmlist2: "{{vmlist2 | default([]) + [item]}}"
+  with_lines: cat "./satellitehosts_state.txt"
+  when: item.find("unassigned") != -1 and item.find("ics_medium") != -1
+- name: count elements
+  set_fact:
+   Number_of_medium: "{{ vmlist2|length }}"
+- name: Filter list of only unassigned servers
+  set_fact:
+   vmlist3: "{{vmlist3 | default([]) + [item]}}"
+  with_lines: cat "./satellitehosts_state.txt"
+  when: item.find("unassigned") != -1 and item.find("ics_large") != -1
+- name: count elements
+  set_fact:
+   Number_of_large: "{{ vmlist3|length }}"
+- name:  Show unassigned VM list information
+  debug:
+   var: "{{ item }}"
+  with_items:
+   - Number_of_small
+   - Number_of_medium
+   - Number_of_large
