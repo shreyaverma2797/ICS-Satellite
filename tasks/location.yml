@@ -1,0 +1,27 @@
+---
+# location file to create a location using iam token as variable in a particular region
+
+#create location
+- name: create location managed by "{{ location }}"
+  uri:
+   url: "https://containers.cloud.ibm.com/global/v2/satellite/createController"
+   method: POST
+   headers:
+    Authorization: "Bearer {{ iamtoken }}"
+    Content-Type: "application/json"
+   body:
+    cos_config:
+     bucket: "{{ bucketname }}"
+     endpoint: "{{ endpoint }}"
+     region: "{{ region }}"
+    cos_credentials:
+     access_key-id: "{{ acidcos }}"
+     secret_access_key: "{{ sidcos }}"
+    description: "{{ description }}"
+    location: "{{ location }}"
+    name: "{{ namelocation }}"
+   status_code: 201
+   body_format: json
+   force_basic_auth: yes
+   return_content: yes
+   validate_certs: false
