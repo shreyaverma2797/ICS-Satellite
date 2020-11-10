@@ -1,0 +1,13 @@
+---
+# vars file for ics
+apikey: "0LJPB4znaDwhAF1gsdzTiQDdN8t9-Y2CEGdnEUKV3Lcw"
+sid: "7b21db99-dd71-4185-82a5-d921ba9181c3"
+acidcos: "2ec881ac51764300a68a16ea85d390c6"
+sidcos: "1860e18f3c089bafd0e1a5ee4f79cc3ad0fca0362cc1be47"
+#location can be london or washington DC
+location: "London"
+bucketname: "icsdemobucket1"
+endpoint: "169.46.118.100"
+region: "us-south"
+description: "just trying to test location"
+namelocation: "icsdemolocation1"
