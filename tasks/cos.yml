@@ -1,0 +1,35 @@
+---
+# cos file to list cos buckets and create cos buckets using IAM token and apikey as variables
+
+#task to list available cos buckets
+- name: list cos buckets
+  uri:
+#  url: "https://s3.us-south.cloud-object-storage.appdomain.cloud/"
+   url: "https://{{ endpoint }}"
+   method: GET
+   headers:
+    Authorization: "Bearer {{ iamtoken }}"
+    IAM-Apikey: "{{ apikey }}"
+    ibm-service-instance-id: "{{ sid }}"
+   force_basic_auth: yes
+   return_content: yes
+   validate_certs: false
+  register: listbuckets
+#printing all the available cos buckets
+- name: listing all cos buckets
+  debug:
+   msg: "{{ listbuckets }}"
+#creating cos bucket in a particular region using sid, apikey, iam token
+- name: create cos bucket
+  uri:
+   url: "https://{{ endpoint }}/{{ bucketname }}?Content-Type=text/plain;charset=utf-8&Authorization&ibm-service-instance-id"
+   method: PUT
+   headers:
+    Authorization: "Bearer {{ iamtoken }}"
+    IAM-Apikey: "{{ apikey }}"
+    ibm-service-instance-id: "{{ sid }}"
+   body: "<CreateBucketConfiguration><LocationConstraint>us-south-standard</LocationConstraint></CreateBucketConfiguration>"
+   body_format: json
+   force_basic_auth: yes
+   return_content: yes
+   validate_certs: false
