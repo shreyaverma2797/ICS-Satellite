@@ -1,0 +1,7 @@
+---
+# main file to invoke role
+# use the following command to run role: ansible-playbook --vault-id @prompt ics-play.yml --extra-var both=true -vvv
+# here extra-var can be both,cos or loc
+- hosts: localhost
+  roles:
+  - ~/ics
