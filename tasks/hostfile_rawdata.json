@@ -1,0 +1,210 @@
+{
+    "cf_cache_status": "DYNAMIC",
+    "cf_ray": "5ef5f84bfecb7351-BOM",
+    "cf_request_id": "064d998378000073516298b000000001",
+    "changed": false,
+    "connection": "close",
+    "content_security_policy": "default-src 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self', default-src 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'",
+    "content_type": "application/json; charset=utf-8",
+    "cookies": {
+        "__cfduid": "dd000e56cc5cf0d9abe913eebeca139df1604908510"
+    },
+    "date": "Mon, 09 Nov 2020 07:55:12 GMT",
+    "expect_ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+    "invocation": {
+        "module_args": {
+            "attributes": null,
+            "backup": null,
+            "body": null,
+            "body_format": "raw",
+            "client_cert": null,
+            "client_key": null,
+            "content": null,
+            "creates": null,
+            "delimiter": null,
+            "dest": null,
+            "directory_mode": null,
+            "follow": false,
+            "follow_redirects": "safe",
+            "force": false,
+            "force_basic_auth": false,
+            "group": null,
+            "headers": {
+                "Authorization": "Bearer eyJraWQiOiIyMDIwMTAyMjE4MzMiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDJUUjdOIiwiaWQiOiJJQk1pZC0yNzAwMDJUUjdOIiwicmVhbG1pZCI6IklCTWlkIiwianRpIjoiOTZmYjljYjQtMmVmZi00Mjc1LTlmMzAtZGU1YmRjODMzOGFhIiwiaWRlbnRpZmllciI6IjI3MDAwMlRSN04iLCJnaXZlbl9uYW1lIjoiUGVyIiwiZmFtaWx5X25hbWUiOiJMeXRrZW1leWVyIiwibmFtZSI6IlBlciBMeXRrZW1leWVyIiwiZW1haWwiOiJseXRrZW1leWVyQGRrLmlibS5jb20iLCJzdWIiOiJseXRrZW1leWVyQGRrLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIzZDMyNGY2ODdlZDBjYzQ0ZmE4N2RiMjNmOWY3ZTU0MiIsImltc191c2VyX2lkIjoiODQ1NjEzNCIsImZyb3plbiI6dHJ1ZSwiaW1zIjoiMjEyNjExMCJ9LCJpYXQiOjE2MDQ5MDg1MDUsImV4cCI6MTYwNDkxMjEwNSwiaXNzIjoiaHR0cHM6Ly9pYW0uY2xvdWQuaWJtLmNvbS9pZGVudGl0eSIsImdyYW50X3R5cGUiOiJ1cm46aWJtOnBhcmFtczpvYXV0aDpncmFudC10eXBlOmFwaWtleSIsInNjb3BlIjoiaWJtIG9wZW5pZCIsImNsaWVudF9pZCI6ImRlZmF1bHQiLCJhY3IiOjEsImFtciI6WyJwd2QiXX0.HJ32vWcgO6_3v3z6xqQ5ut2rh2_IB9U-Tj_4RLGlhxSch9-ge5YRb6nCr7ZkpLlE5tjalAVYY4D4Ni8b0KiFu2J7dUovrZtFJBNp9joZaxg_MZyOz5a8EJ-hem373n_kn3VA0XH2altMbNOp9PmE22v3XtqqXcfvHTIMs2QCJnSGzbrfOVVAYB1TvKP-S6sYj2KuJTB-WZsARvwYwSp9rWkkuF28M3yTqmXcMxhiZ1idC8iahhFy7ibbsV9RnetKylvCPRqPgFoeZZHZNEeaOkdmd14de2SxYOzgcw77pFcjADpcB1bJSUlScXwV8oaLw7AMmp4RCe6_AhiT1A0sbw",
+                "Content-Type": "application/json",
+                 "IAM-Apikey": "0LJPB4znaDwhAF1gsdzTiQDdN8t9-Y2CEGdnEUKV3Lcw"
+            },
+            "http_agent": "ansible-httpget",
+            "method": "GET",
+            "mode": null,
+            "owner": null,
+            "regexp": null,
+            "remote_src": null,
+            "removes": null,
+            "return_content": false,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "status_code": [
+                200
+            ],
+            "timeout": 30,
+            "unsafe_writes": null,
+            "url": "https://containers.cloud.ibm.com/global/v2/satellite/hostqueue/getHosts?controller=DK-OPA",
+            "url_password": null,
+            "url_username": null,
+            "use_proxy": true,
+            "validate_certs": true
+        }
+    },
+    "json": [
+        {
+            "assignment": {
+                "clusterID": "bt21cpll08io3su7h5r0",
+                "clusterName": "infrastructure",
+                "ipAddress": "159.8.42.212",
+                "receivedDate": "2020-08-25T15:16:15+0000",
+                "requestedDate": "2020-08-25T15:16:06+0000",
+                "workerID": "sat-virtualser-23a2b5c5155909e761d653feb8922fdea95eaa81",
+                "workerPoolID": "bt21cpll08io3su7h5r0-21dab7f",
+                "workerPoolName": "default",
+                "zone": "eu-gb-1"
+            },
+            "health": {
+                "message": "Ready",
+                "modifiedDate": "0001-01-01T00:00:00Z",
+                "status": "normal"
+            },
+            "id": "bt2bulol0s9kgvs7qd7g",
+            "labels": {
+                "cpu": "4",
+                "label": "custom",
+                "memory": "16260936"
+            },
+            "name": "ics_medium_DKOPA_host_345567889899",
+            "state": "unassigned"
+        },
+        {
+            "assignment": {
+                "clusterID": "bt21cpll08io3su7h5r0",
+                "clusterName": "infrastructure",
+                "ipAddress": "5.153.52.21",
+                "receivedDate": "2020-08-25T15:16:27+0000",
+                "requestedDate": "2020-08-25T15:16:22+0000",
+                "workerID": "sat-virtualser-fb05f8a0cb50cca4d5e7b1c3a910ad17c0c34b85",
+                "workerPoolID": "bt21cpll08io3su7h5r0-21dab7f",
+                "workerPoolName": "default",
+                "zone": "eu-gb-2"
+            },
+            "health": {
+                "message": "Ready",
+                "modifiedDate": "0001-01-01T00:00:00Z",
+                "status": "normal"
+            },
+            "id": "bt2c5qql03aao21g2r7g",
+            "labels": {
+ "cpu": "4",
+                "label": "custom",
+                "memory": "16260936"
+            },
+            "name": "ics_medium_DKOPA_host_345567889810",
+            "state": "unassigned"
+        },
+        {
+            "assignment": {
+                "clusterID": "bt21cpll08io3su7h5r0",
+                "clusterName": "infrastructure",
+                "ipAddress": "159.8.42.210",
+                "receivedDate": "2020-08-25T15:17:06+0000",
+                "requestedDate": "2020-08-25T15:17:04+0000",
+                "workerID": "sat-virtualser-12b302c9b9433333cb198575453a4f604a90580d",
+                "workerPoolID": "bt21cpll08io3su7h5r0-21dab7f",
+                "workerPoolName": "default",
+                "zone": "eu-gb-3"
+            },
+            "health": {
+                "message": "Ready",
+                "modifiedDate": "0001-01-01T00:00:00Z",
+                "status": "normal"
+            },
+            "id": "bt2c7ofl05ou4c47qd80",
+            "labels": {
+                "cpu": "4",
+                "label": "custom",
+                "memory": "16260936"
+            },
+            "name": "ics_small_DKOPA_host_345567889899",
+            "state": "assigned"
+        },
+        {
+            "assignment": {
+                "clusterID": "bt32br5l0ecbkcrq3uj0",
+                "clusterName": "mycluster-satellite",
+                "ipAddress": "5.153.52.25",
+                "receivedDate": "2020-08-26T10:07:11+0000",
+                "requestedDate": "2020-08-26T10:07:02+0000",
+                "workerID": "sat-worker01-615f7e39ed38d04f1de44f70f679999b65560dbd",
+                "workerPoolID": "bt32br5l0ecbkcrq3uj0-2b03df1",
+                "workerPoolName": "default",
+                "zone": "eu-gb-1"
+            },
+            "health": {
+                "message": "Ready",
+                "modifiedDate": "0001-01-01T00:00:00Z",
+                "status": "normal"
+            },
+            "id": "bt2jkc8l0ogvrtc2jic0",
+            "labels": {
+                "Type": "Std-worker",
+                "cpu": "4",
+                "memory": "16260940"
+            },
+            "name": "ics_small_DKOPA_host_345567889810",
+            "state": "unassigned"
+        },
+        {
+            "assignment": {
+                "clusterID": "bt32br5l0ecbkcrq3uj0",
+                "clusterName": "mycluster-satellite",
+                "ipAddress": "5.153.52.22",
+                "receivedDate": "2020-09-04T14:52:42+0000",
+                "requestedDate": "2020-09-04T14:52:37+0000",
+                "workerID": "sat-worker03-8fd1ca1787add2f6f1c9bbebe5fcb25c9c8c5120",
+                "workerPoolID": "bt32br5l0ecbkcrq3uj0-2b03df1",
+                "workerPoolName": "default",
+                "zone": "eu-gb-1"
+            },
+            "health": {
+                "message": "Ready",
+                "modifiedDate": "0001-01-01T00:00:00Z",
+                "status": "normal"
+            },
+            "id": "bt2jo67l03u2k0s2jid0",
+            "labels": {
+                "Type": "Std-worker",
+                 "cpu": "4",
+                "memory": "16260940"
+            },
+            "name": "ics_large_DKOPA_host_345567889899",
+            "state": "unassigned"
+        }
+    ],
+    "msg": "OK (unknown bytes)",
+    "redirected": false,
+    "server": "cloudflare",
+    "set_cookie": "__cfduid=dd000e56cc5cf0d9abe913eebeca139df1604908510; expires=Wed, 09-Dec-20 07:55:10 GMT; path=/; domain=.containers.cloud.ibm.com; HttpOnly; SameSite=Lax; Secure",
+    "status": 200,
+    "strict_transport_security": "max-age=31536000; includeSubdomains;, max-age=31536000; includeSubdomains;",
+    "transfer_encoding": "chunked",
+    "url": "https://containers.cloud.ibm.com/global/v2/satellite/hostqueue/getHosts?controller=DK-OPA",
+    "vary": "Accept-Encoding",
+    "x_carrier": "prod-lon04-carrier1",
+    "x_content_type_options": "nosniff, nosniff",
+    "x_frame_options": "DENY, DENY",
+    "x_hostname": "armada-api-8698bfbdd-4lpk7",
+    "x_permitted_cross_domain_policies": "master-only, master-only",
+    "x_region": "eu-gb",
+    "x_request_id": "5ef5f84bf6717351-BOM",
+    "x_xss_protection": "1; mode=block;, 1; mode=block;"
