@@ -1,0 +1,46 @@
+---
+# main file for ics to create iam token, invoke COS bucket and location
+
+#Generates IAM token using apikey as variable
+- name: generate iam token
+  uri:
+   url: "https://iam.cloud.ibm.com/identity/token?content-type=application/x-www-form-urlencoded&accept=application/json"
+   method: POST
+   body: "grant_type=urn%3Aibm%3Aparams%3Aoauth%3Agrant-type%3Aapikey&apikey={{ apikey }}"
+   body_format: json
+   headers:
+    Content-Type: "application/x-www-form-urlencoded"
+    force_basic_auth: yes
+    return_content: yes
+  register: accesstoken
+#setting facts to store the following  as environment variables for consecutive tasks
+- name: setting it as a fact
+  set_fact:
+   iamtoken: "{{ accesstoken.json.access_token }}"
+   cos: "true"
+   loc: "true"
+   both: "true"
+   host: "true"
+#printing iam token for client reference
+- name: print iamtoken
+  debug:
+   msg: "{{ iamtoken }}"
+#set extra vars as "both" to include cos.yml and loc.yml. This has to be done for first time setup
+- name: include both
+  include: "{{ item }}"
+  with_items:
+   - cos.yml
+   - location.yml
+  when: both=="true"
+#set extra vars as "cos" to include cos.yml for creation of cos bucket
+- name: include cos playbook
+  include: cos.yml
+  when: cos=="true"
+#set extra vars as "loc" to include loc.yml for creation of location. Input the existing cos bucket name in vars/main.yml
+- name: include location playbook
+  include: location.yml
+  when: loc=="true"
+#get host pool information
+- name: include host.yml
+  include: host.yml
+  when: host=="true"
