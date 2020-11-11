@@ -75,3 +75,8 @@
    - Number_of_small
    - Number_of_medium
    - Number_of_large
+- name: find the number of VM's that need to be created for each t-shirt size
+  set_fact:
+   small: "{{ 3 - Number_of_small|int }}"
+   medium: "{{ 3 - Number_of_medium|int }}"
+   large: "{{ 3 - Number_of_large|int }}"
