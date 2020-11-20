@@ -1,7 +1,17 @@
----
-# main file to invoke role
-# use the following command to run role: ansible-playbook --vault-id @prompt ics-play.yml --extra-var both=true -vvv
-# here extra-var can be both,cos or loc
-- hosts: localhost
-  roles:
-  - ~/ics
+- name : Create VM's by invoking CFME API
+  hosts: localhost
+  connection: local
+  ignore_errors: yes
+  tasks:
+  - name: Import ICS Pool role
+    import_role:
+      name: ./ics-pool
+
+  - name: Import cfme-vms role
+    import_role:
+      name: ./cfme-vms
+    vars:
+      - ics_small_count: "{{ num_of_vms.ansible_facts.ics_small_count }}"
+      - ics_medium_count: "{{ num_of_vms.ansible_facts.ics_medium_count }}"
+      - ics_large_count: "{{ num_of_vms.ansible_facts.ics_large_count }}"
+
